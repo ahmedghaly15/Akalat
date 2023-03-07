@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "561169061582",
+    "project_id": "akalat-app-291d9",
+    "storage_bucket": "akalat-app-291d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561169061582:android:555b5091c3754abdece29f",
+        "android_client_info": {
+          "package_name": "com.example.meal_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561169061582-t6h1ale20jhfjsrh7hn1gjv9i4953ht5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3SkIwA-4ElRCRroHhCmiSdyPVwxi0jGs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561169061582-t6h1ale20jhfjsrh7hn1gjv9i4953ht5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
