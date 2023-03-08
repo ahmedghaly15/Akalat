@@ -66,9 +66,9 @@ class _LoginScreenState extends State<LoginScreen>
       // Handling Errors
       on FirebaseAuthException catch (error) {
         if (error.code == 'user-not-found') {
-          buildSnackBar("Incorrect email");
+          buildDialog("Incorrect email");
         } else if (error.code == 'wrong-password') {
-          buildSnackBar("Incorrect Password");
+          buildDialog("Incorrect Password");
         }
       }
     }
@@ -89,9 +89,9 @@ class _LoginScreenState extends State<LoginScreen>
       // Handling Errors
       on FirebaseAuthException catch (e) {
         if (e.code == 'weak-password') {
-          buildSnackBar("Password is too weak");
+          buildDialog("Password is too weak");
         } else if (e.code == 'email-already-in-use') {
-          buildSnackBar("Account already exists");
+          buildDialog("Account already exists");
         }
       }
     }
@@ -305,27 +305,23 @@ class _LoginScreenState extends State<LoginScreen>
     );
   }
 
-// ======================== Build Snack Bar Function =============================
-  void buildSnackBar(String content) {
-    SnackBar snackBar = SnackBar(
-      content: Text(
-        content,
-        style: const TextStyle(
-          fontSize: 15.0,
-          fontWeight: FontWeight.bold,
-          letterSpacing: 1,
-        ),
-      ),
-      backgroundColor: Theme.of(context).primaryColor,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.0),
-      ),
-      elevation: 10,
-      duration: const Duration(milliseconds: 1500),
-      behavior: SnackBarBehavior.floating,
-      padding: const EdgeInsets.all(15.0),
+// ======================== Build Error Dialog Function =============================
+  void buildDialog(String content) {
+    Get.defaultDialog(
+      title: "Warning",
+      titleStyle: Theme.of(context).textTheme.titleLarge!.copyWith(
+            fontSize: 25,
+            letterSpacing: 1,
+          ),
+      middleText: content,
+      middleTextStyle: Theme.of(context).textTheme.titleMedium!.copyWith(
+            fontWeight: FontWeight.w500,
+          ),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      backgroundColor: const Color.fromARGB(255, 255, 120, 0),
+      barrierDismissible: true,
+      radius: 20,
     );
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 
 // ======================== Build Text Form Field Function =============================
@@ -356,15 +352,19 @@ class _LoginScreenState extends State<LoginScreen>
         suffixIconColor: const Color.fromARGB(255, 255, 110, 0),
         alignLabelWithHint: true,
         contentPadding: const EdgeInsets.only(left: 10.0),
-        enabledBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Color.fromARGB(255, 255, 110, 0))),
-        focusedBorder: const OutlineInputBorder(
-            borderSide: BorderSide(
-          color: Color.fromARGB(255, 255, 110, 0),
-          width: 2,
-        )),
-        errorBorder: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey)),
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide:
+                const BorderSide(color: Color.fromARGB(255, 255, 110, 0))),
+        focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: const BorderSide(
+              color: Color.fromARGB(255, 255, 110, 0),
+              width: 2,
+            )),
+        errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15),
+            borderSide: const BorderSide(color: Colors.grey)),
       ),
       style: const TextStyle(
         color: Colors.black,

@@ -86,7 +86,7 @@ class _MainDrawerState extends State<MainDrawer> {
                     () {
                       // Navigating to TabsScreen
                       Get.offAll(
-                        const TabsScreen(),
+                        () => const TabsScreen(),
                         transition: Transition.fadeIn,
                       );
                     },
@@ -97,7 +97,7 @@ class _MainDrawerState extends State<MainDrawer> {
                     () {
                       // Navigating to FiltersScreen
                       Get.offAll(
-                        const FiltersScreen(),
+                        () => const FiltersScreen(),
                         transition: Transition.fadeIn,
                       );
                     },
@@ -113,7 +113,7 @@ class _MainDrawerState extends State<MainDrawer> {
 
                     // Navigating to LoginScrren
                     Get.offAll(
-                      const LoginScreen(),
+                      () => const LoginScreen(),
                       transition: Transition.fadeIn,
                     );
                   }),

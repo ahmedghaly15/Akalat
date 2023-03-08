@@ -61,6 +61,19 @@ class _TabsScreenState extends State<TabsScreen> {
               ),
             ),
           ),
+          leading: Builder(builder: (BuildContext ctx) {
+            return GestureDetector(
+              onTap: () => Scaffold.of(ctx).openDrawer(),
+              child: CircleAvatar(
+                backgroundColor: const Color.fromARGB(0, 255, 120, 0),
+                child: CircleAvatar(
+                  backgroundImage:
+                      const AssetImage("assets/images/Logo/cheff logo.png"),
+                  radius: MediaQuery.of(context).size.width * 0.04,
+                ),
+              ),
+            );
+          }),
         ),
         body: _tabs![_selectedIndex],
         bottomNavigationBar: Container(
