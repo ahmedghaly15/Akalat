@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:meal_app/providers/meal_provider.dart';
 import 'package:provider/provider.dart';
 import '../Widgets/category_items.dart';
@@ -30,10 +31,21 @@ class CategoriesScreen extends StatelessWidget {
           children: Provider.of<MealProvider>(context)
               .avialableCategories
               .map(
-                (catData) => CategoryItem(
-                  catData.id,
-                  catData.title,
-                  catData.backgroundImgUrl,
+                (catData) => AnimationConfiguration.staggeredGrid(
+                  position: int.parse(catData.id[1]),
+                  duration: const Duration(milliseconds: 650),
+                  columnCount: Provider.of<MealProvider>(context)
+                      .avialableCategories
+                      .length,
+                  child: ScaleAnimation(
+                    child: FadeInAnimation(
+                      child: CategoryItem(
+                        catData.id,
+                        catData.title,
+                        catData.backgroundImgUrl,
+                      ),
+                    ),
+                  ),
                 ),
               )
               .toList(),

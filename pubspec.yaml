@@ -13,7 +13,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_launcher_icons: ^0.11.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_staggered_animations: ^1.1.1
   google_nav_bar: ^5.0.6
   flutter_screenutil: ^5.6.0
   shared_preferences: ^2.0.15
@@ -36,41 +37,8 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/Categories/asian category.jpeg
-    - assets/images/Categories/breakfast category.jpeg
-    - assets/images/Categories/exotic category.png
-    - assets/images/Categories/french category.jpeg
-    - assets/images/Categories/german category.jpg
-    - assets/images/Categories/italian category.png
-    - assets/images/Categories/lovely category.png
-    - assets/images/Categories/quick category.jpeg
-    - assets/images/Categories/summer category.jpeg
-    - assets/images/Categories/hamburgers category.png
-    - assets/images/Meals/Bistecca Alla Fiorentina.jpeg
-    - assets/images/Meals/Lasagne.jpeg
-    - assets/images/Meals/Muffin.jpeg
-    - assets/images/Meals/Pan-fried camembert sandwich.jpeg
-    - assets/images/Meals/Risotto.jpeg
-    - assets/images/Meals/Spaghetti with Tomato Sauce.jpeg
-    - assets/images/Meals/Taco.jpeg
-    - assets/images/Meals/Toast Hawaii.jpeg
-    - assets/images/Meals/asparagus-3304997_1280.jpg
-    - assets/images/Meals/burger-500054_1280.jpg
-    - assets/images/Meals/indian-food-3482749_1280.jpg
-    - assets/images/Meals/orange .jpg
-    - assets/images/Meals/pancake-3529653_1280.jpg
-    - assets/images/Meals/schnitzel-3279045_1280.jpg
-    - assets/images/Meals/smoked-salmon-salad-1768890_1280.jpg
-    - assets/images/Meals/souffle-412785_1280.jpg
-    - assets/images/Meals/turky burger.jpeg
-    - assets/images/Meals/Bean burger.jpeg
-    - assets/images/Meals/Veggie burger.jpeg
-    - assets/images/Meals/Labskaus.jpeg
-    - assets/images/Meals/Königsberger klopse.jpeg
-    - assets/images/Meals/Käsespätzle.jpeg
-    - assets/images/Meals/Tossed salad.jpeg
-    - assets/images/Meals/Palak Dal Khichdi.jpeg
-    - assets/images/Meals/Low-Calorie Oats Idli.jpeg
+    - assets/images/Categories/
+    - assets/images/Meals/
     - assets/images/Logo/cheff logo.png
 
   fonts:
